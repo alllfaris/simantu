@@ -33,11 +33,6 @@ $this->params['breadcrumbs'][] = $this->title;
             <tbody>
 
                 <tr>
-                    <td class="detail-label">ID</td>
-                    <td class="detail-value"><?= $model->id ?></td>
-                </tr>
-
-                <tr>
                     <td class="detail-label">Judul Tugas</td>
                     <td class="detail-value fw-medium"><?= Html::encode($model->tugas->judul_tugas) ?></td>
                 </tr>
