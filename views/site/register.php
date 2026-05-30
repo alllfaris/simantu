@@ -109,11 +109,11 @@ $this->title = 'Registrasi Mahasiswa';
                     <?= $form->field($model, 'kelas', [
                         'inputOptions' => [
                             'class' => 'form-control',
-                            'placeholder' => 'Misal: TI-3A',
+                            'placeholder' => 'Masukkan Kelas',
                             'style' => 'border-radius:10px; border-color:var(--color-card-border);',
                         ],
-                    ])->label('Kelas / Jurusan', ['class' => 'form-label fw-semibold small mb-1']) ?>
-                </div>
+                    ])->label('Kelas', ['class' => 'form-label fw-semibold small mb-1']) ?>
+                </div> 
             </div>
 
             <!-- Submit -->
