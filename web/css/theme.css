@@ -1,0 +1,304 @@
+:root {
+  --color-sidebar-bg:    #f7fdfb;
+  --color-page-bg:       #f0faf5;
+  --color-card-bg:       #ffffff;
+  --color-card-border:   #d1f5e4;
+
+  --color-primary:       #0F6E56;
+  --color-primary-mid:   #1D9E75;
+  --color-primary-light: #5DCAA5;
+  --color-primary-pale:  #d1f5e4;
+
+  --color-text-dark:     #1a2e26;
+  --color-text-muted:    #6b8a7e;
+
+  --color-success:       #1D9E75;
+  --color-warning:       #f59e0b;
+  --color-danger:        #ef4444;
+  --color-info:          #3b82f6;
+
+  --font-family-base: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--color-page-bg);
+    font-family: var(--font-family-base);
+    color: var(--color-text-dark);
+} 
+
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background: var(--color-sidebar-bg);
+  border-right: 1px solid var(--color-card-border);
+  transition: all 0.3s ease;
+}
+
+.sidebar-link {
+  color: var(--color-text-dark);
+  border-radius: 12px;
+  padding: 12px 14px;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+.sidebar-link:hover {
+  background: var(--color-primary-pale);
+  color: var(--color-primary);
+}
+
+.card {
+  border: 1px solid var(--color-card-border);
+  border-radius: 18px;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-mid);
+}
+
+.topbar {
+  background: white;
+  border-bottom: 1px solid var(--color-card-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.topbar img {
+  object-fit: cover;
+}
+
+.dropdown-menu {
+  border-radius: 14px;
+}
+
+footer {
+  background: white;
+  border-top: 1px solid var(--color-card-border);
+}
+
+.toggle-sidebar-btn {
+  border: none;
+  background: var(--color-primary);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.toggle-sidebar-btn:hover {
+  background: var(--color-primary-mid);
+}
+
+.toggle-sidebar-btn {
+  display: none;
+  border: none;
+  background: var(--color-primary);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-sidebar-btn:hover {
+  background: var(--color-primary-mid);
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 998;
+}
+
+.sidebar-overlay.active {
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .toggle-sidebar-btn {
+    display: flex; 
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -280px;
+    top: 0;
+    z-index: 999;
+    transition: 0.3s;
+    height: 100vh;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+}
+
+/* Detail View Table */
+.detail-label {
+  width: 220px;
+  padding: 14px 20px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  background: var(--color-page-bg);
+  border-bottom: 1px solid var(--color-card-border);
+  vertical-align: middle;
+}
+
+.detail-value {
+  padding: 14px 20px;
+  color: var(--color-text-dark);
+  border-bottom: 1px solid var(--color-card-border);
+  vertical-align: middle;
+}
+
+.table-custom tr:last-child .detail-label,
+.table-custom tr:last-child .detail-value {
+  border-bottom: none;
+}
+
+/* Card wrapper */
+.card-custom {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* Badge tambahan */
+.badge-danger {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Table header */
+.table-custom thead th {
+  background: var(--color-page-bg);
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-card-border) !important;
+}
+
+.table-custom tbody tr {
+  border-bottom: 1px solid var(--color-card-border);
+  transition: background 0.15s;
+}
+
+.table-custom tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table-custom tbody tr:hover {
+  background: var(--color-primary-pale);
+}
+
+/* Search input */
+.input-search-wrapper {
+  position: relative;
+}
+
+.input-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.input-search {
+  padding-left: 34px;
+  border-radius: 10px;
+  border: 1px solid var(--color-card-border);
+  background: var(--color-page-bg);
+  min-width: 220px;
+}
+
+.input-search:focus {
+  border-color: var(--color-primary-light);
+  box-shadow: none;
+  background: white;
+}
+
+.site-login .form-control:valid {
+  border-color: var(--color-card-border) !important;
+  background-image: none !important;
+  padding-right: 0.75rem !important;
+}
+
+.site-login .form-control:focus {
+  border-color: var(--color-primary-light) !important;
+  box-shadow: 0 0 0 0.2rem rgba(15, 110, 86, 0.15) !important;
+}
+
+.badge-active {
+    background: #dcfce7;
+    color: #166534;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-pending {
+    background: #fef3c7;
+    color: #92400e;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.pagination .page-link {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    border-radius: 8px !important;
+    color: var(--color-text-muted);
+    background: var(--color-page-bg);
+    border: 1px solid var(--color-card-border);
+    transition: all 0.15s ease;
+}
+
+.pagination .page-link:hover {
+    background: var(--color-primary-pale);
+    color: var(--color-primary);
+    border-color: var(--color-primary-light);
+}
+
+.pagination .page-item.active .page-link {
+    background: var(--color-primary);
+    color: #ffffff;
+    font-weight: 600;
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(15, 110, 86, 0.3);
+}
+
+.pagination .page-item.disabled .page-link {
+    background: var(--color-page-bg);
+    color: var(--color-card-border);
+    border-color: var(--color-card-border);
+}
