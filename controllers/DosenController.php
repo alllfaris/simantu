@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Dosen;
 use app\models\DosenSearch;
+use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -130,7 +131,13 @@ class DosenController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        try {
+            $this->findModel($id)->delete();
+        } catch (\yii\db\IntegrityException $e) {
+            Yii::$app->session->setFlash('error', 
+                'Dosen tidak bisa dihapus karena masih memiliki data tugas atau mata kuliah terkait.'
+            );
+        }
 
         return $this->redirect(['index']);
     }
