@@ -21,11 +21,6 @@ $models = $dataProvider->getModels();
         <p class="text-muted small mb-0">Kelola data dosen pengampu mata kuliah.</p>
     </div>
 
-    <?php if (Yii::$app->session->hasFlash('error')): ?>
-        <div class="alert alert-danger">
-            <?= Yii::$app->session->getFlash('error') ?>
-        </div>
-    <?php endif; ?>
 
     <div class="card-custom p-3 mb-3 d-flex justify-content-between align-items-center gap-3">
         <div class="d-flex gap-2 flex-wrap">
